@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import {Botao} from './components/Botao';
 
-function App() {
+const App = () => {
+
+
+  let textoDoBotao: string = 'Clique aqui no botão'
+
+  const botaoEventAction = (frase : string) => {
+    alert("Frase que está rodando aqui no APP: " + frase);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Botao text={textoDoBotao} clickFn={botaoEventAction} ></Botao>
     </div>
-  );
+  )
 }
 
 export default App;
